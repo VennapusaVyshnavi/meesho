@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('Hi') {
+            steps {
+                echo 'good morning'
+            }
+        }
+         stage('SCM') {
+            steps {
+                git branch: 'main', url: 'https://github.com/VennapusaVyshnavi/meesho.git'
+            }
+        }
+    }
+}
